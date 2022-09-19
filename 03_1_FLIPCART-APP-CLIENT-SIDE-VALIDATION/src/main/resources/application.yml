@@ -1,0 +1,39 @@
+#server port no
+
+server:
+  port: 7090
+  
+  #datasource properties
+  
+spring:
+  datasource:
+    username: sa
+    password: 
+    url: jdbc:h2:mem:test
+    driver-class-name: org.h2.Driver
+    
+   #ORM source properties
+      
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+      
+      #to create table in h2(to avoid any exception while creating table)
+    defer-datasource-initialization: true  
+      
+      
+ # configuring view resolver
+ 
+  mvc:
+   view:
+    prefix : /views/
+    suffix : .jsp
+    
+ # we can seperate profiles by 3 dots as below
+# QA profile properties
+   #  ---
+ #DEv profile properties
