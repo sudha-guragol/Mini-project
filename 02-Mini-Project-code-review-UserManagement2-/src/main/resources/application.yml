@@ -1,0 +1,50 @@
+#server port no
+
+server:
+  port: 7090
+  
+  #datasource properties
+  
+spring:
+  datasource:
+    username: system
+    password: system
+    url: jdbc:oracle:thin:@localhost:1521/XE
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    
+   #ORM source properties
+      
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+      
+  # gmail SMTP e-mail properties(sending mail from java application)
+      
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: sudha.indi11@gmail.com
+    password: guragol@86
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
+          
+app:
+   messages:
+     welcomeMsg: Welcometo Ashok IT!!...  
+     greetMsg: Good Morning!!!!        
+     invalidCredentials: Invalid Credentials
+     accLocked: Your Account Is Locked
+     UserRegSuccess : please check your email,for unlocking the account 
+     userRegFailed : Failed to Register 
+     unlockAccEmailSub : Registration Success !! Ashok IT 
+     unlockAccEmailBodyFile : UNLOCK-ACC-EMAIL-BODY-TEMPLATE.txt
+     recoverPwdEmailBodyFile : RECOVER-PASSWORD-EMAIL-BODY-TEMPLATE.txt 
+     recoverPwdEmailSub : Forgot Password Ashok IT    
